@@ -6,14 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>浇花系统</title>
+    <style>
+        .content {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .btn {
+            width: 100px;
+            height: 40px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            border-radius: 4px;
+            color: #fff;
+            background: #1890ff;
+            border-color: #1890ff;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, .12);
+            box-shadow: 0 2px 0 rgba(0, 0, 0, .045);
+            cursor: pointer;
+            transition: all .3s cubic-bezier(.645, .045, .355, 1);
+            user-select: none;
+            touch-action: manipulation;
+        }
+    </style>
 </head>
 
 <body>
-    <button onclick="handleStartWater()">开始浇水</button>
-    <button onclick="handleStopWater()">停止浇水</button>
+    <div class="content">
+        <div class="btn" onclick="handleStartWater()">开始浇水</div>
+        <div class="btn" onclick="handleStopWater()">停止浇水</div>
+    </div>
     <script type="text/javascript">
         function handleStartWater() {
-            console.log('============')
             axios.post('/startwater', {
                 data: {
                     ID: 12345

@@ -5,7 +5,7 @@ const router = require('koa-router')();
 const koaBody = require('koa-body');
 app.use(require('koa-static')(__dirname + '/static/'));
 
-rpio.open(36,rpio.OUTPUT,rpio.HIGH) // set out by default low
+rpio.open(36,rpio.OUTPUT,rpio.HIGH) // 设置引脚输出，默认高电平
 
 function startIo(){
     rpio.write(36, rpio.HIGH);
