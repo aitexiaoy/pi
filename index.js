@@ -5,12 +5,14 @@ const router = require('koa-router')();
 const koaBody = require('koa-body');
 app.use(require('koa-static')(__dirname + '/static/'));
 
+rpio.open(36,rpio.OUTPUT,rpio.HIGH) // set out by default low
+
 function startIo(){
-    rpio.write(16, rpio.HIGH);
+    rpio.write(36, rpio.HIGH);
 }
 
 function stopIo(){
-    rpio.write(16, rpio.LOW);
+    rpio.write(36, rpio.LOW);
 }
 
 router.post('/startwater', koaBody(),
